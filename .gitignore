@@ -1,0 +1,11 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.tmp
+*.bak
+
+# Archivos duplicados / versiones antiguas
+index (*.html

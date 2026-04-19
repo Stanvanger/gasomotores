@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Gasomotores | Taller Mecánica Gasolina Tarragona</title>
+<meta name="description" content="Gasomotores – Taller especializado en motores a gasolina en El Vendrell, Tarragona."/>
+<link rel="icon" href="imagenes/favicon_gasomotores.png" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--g:#7CB518;--gl:#9DD62A;--d0:#141410;--d1:#1A1A16;--d2:#222220;--d3:#2A2A26;--ash:#7A7A72;--w:#F0F0E8;--bdr:rgba(124,181,24,.22);--r:6px;--blue:#3498db;--red:#c0392b;--yel:#f39c12}
+body{font-family:'Exo 2',sans-serif;background:var(--d0);color:#CCCCC4;overflow-x:hidden}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+button,input,select,textarea{font-family:'Exo 2',sans-serif}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:var(--g)}
+.hidden{display:none!important}.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.tag{font-size:.67rem;letter-spacing:3px;color:var(--g);text-transform:uppercase;font-weight:700}
+.tag::before{content:'— '}.tag::after{content:' —'}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:var(--w);text-transform:uppercase;letter-spacing:2px;line-height:1.05}
+.sec-title span{color:var(--g)}.sec-head{text-align:center;margin-bottom:3rem}
+.btn{display:inline-flex;align-items:center;gap:7px;border:none;border-radius:var(--r);font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:11px 24px;transition:.2s;cursor:pointer}
+.btn-g{background:var(--g);color:var(--d0)}.btn-g:hover{background:var(--gl);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--w);border:1px solid rgba(255,255,255,.18)}.btn-ghost:hover{border-color:var(--g);color:var(--g)}
+.fg{display:flex;flex-direction:column;gap:4px}.fl{font-size:.65rem;letter-spacing:2px;color:var(--ash);text-transform:uppercase;font-weight:600}
+.fi,.fsel,.fta{background:var(--d1);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:9px 12px;color:var(--w);font-size:.87rem;outline:none;transition:border-color .2s;width:100%}
+.fi:focus,.fsel:focus,.fta:focus{border-color:var(--g)}.fi::placeholder,.fta::placeholder{color:var(--ash)}.fsel option{background:var(--d1)}.fta{resize:vertical;min-height:70px}
+.form-ok{background:rgba(124,181,24,.1);border:1px solid var(--bdr);border-radius:4px;padding:8px 12px;font-size:.78rem;color:var(--g);display:none;text-align:center}.form-ok.show{display:block}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;background:rgba(20,20,16,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--bdr)}
+.logo-a{display:flex;align-items:center;gap:10px}.logo-img{height:42px;object-fit:contain}
+.brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.45rem;color:var(--w);letter-spacing:2px;text-transform:uppercase}
+.brand b{color:var(--g)}.sub{font-size:.53rem;letter-spacing:3px;color:var(--ash);text-transform:uppercase}
+.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center}
+.nav-links a{font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:#AEAEA6;font-weight:500;transition:.2s}.nav-links a:hover{color:var(--g)}
+.burger{display:none;flex-direction:column;gap:4px;border:none;background:transparent;padding:4px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:var(--g);border-radius:2px}
+@media(max-width:768px){.nav-links{display:none;position:fixed;top:66px;left:0;right:0;background:var(--d1);flex-direction:column;padding:1rem;border-bottom:1px solid var(--bdr);gap:.5rem}.nav-links.open{display:flex}.burger{display:flex}}
+/* CARRUSEL HERO */
+.hero-wrap{position:relative;width:100%;height:85vh;overflow:hidden;cursor:pointer;user-select:none;margin-top:66px}
+.hero-slider{display:flex;height:100%;transition:transform .85s cubic-bezier(.77,0,.18,1)}
+.hero-slide{min-width:100%;height:100%;position:relative;flex-shrink:0}
+.hero-slide img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.hero-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(20,20,16,.88) 0%,rgba(20,20,16,.2) 60%,transparent 100%);pointer-events:none}
+.slide-cnt{position:absolute;bottom:3.5rem;left:50%;transform:translateX(-50%);z-index:2;text-align:center;width:100%;max-width:900px;padding:0 2rem;pointer-events:none}
+.slide-tag{display:inline-block;background:var(--g);color:var(--d0);font-size:.65rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;padding:3px 12px;margin-bottom:.9rem}
+.slide-titulo{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;color:var(--w);text-transform:uppercase;letter-spacing:3px;line-height:1;margin-bottom:.5rem}
+.slide-titulo em{color:var(--g);font-style:normal}
+.slide-sub{font-size:.9rem;color:rgba(204,204,196,.8)}
+.hero-dots{position:absolute;bottom:1.2rem;right:2rem;display:flex;gap:8px;z-index:5}
+.dot{width:28px;height:3px;background:rgba(240,240,232,.25);transition:background .35s,width .35s;cursor:pointer}
+.dot.active{background:var(--g);width:44px}
+/* HERO INFO */
+.hero-info{background:var(--d1);padding:2.5rem 0;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,181,24,.11);border:1px solid var(--bdr);border-radius:99px;padding:5px 16px;font-size:.66rem;letter-spacing:3px;color:var(--g);text-transform:uppercase;font-weight:700;margin-bottom:1rem}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--g);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;margin:.8rem 0}
+.pill{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:99px;padding:4px 12px;font-size:.68rem;letter-spacing:1.5px;color:#AEAEA6;text-transform:uppercase}
+.pill.g{background:rgba(124,181,24,.1);border-color:var(--bdr);color:var(--g)}
+.dom-band{display:inline-flex;align-items:center;gap:11px;background:linear-gradient(135deg,rgba(124,181,24,.13),rgba(90,138,14,.06));border:1px solid var(--g);border-radius:var(--r);padding:.75rem 1.3rem;margin:.8rem auto;font-size:.8rem}
+.dom-t{font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:700;color:var(--w);text-transform:uppercase}
+.dom-s{font-size:.68rem;color:#AEAEA6;margin-top:1px}
+.dom-price{font-family:'Barlow Condensed',sans-serif;font-size:1.25rem;font-weight:900;color:var(--g);margin-left:.5rem}
+.hero-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin:.8rem 0}
+.hero-stats{display:flex;gap:2.8rem;justify-content:center;margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.05)}
+.sn{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:900;color:var(--g);line-height:1}
+.sl{font-size:.62rem;letter-spacing:2px;color:var(--ash);text-transform:uppercase;margin-top:2px}
+/* SECCIONES */
+section{padding:5rem 0}
+#servicios{background:var(--d1)}
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1.5px}
+.srv{background:var(--d2);padding:2rem 1.7rem;position:relative;overflow:hidden;transition:.3s}
+.srv::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--g);transition:height .4s}
+.srv:hover{background:var(--d3)}.srv:hover::before{height:100%}
+.srv-num{position:absolute;top:1.1rem;right:1.1rem;font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:900;color:rgba(124,181,24,.06)}
+.srv svg{width:42px;height:42px;color:var(--g);margin-bottom:1.1rem}
+.srv h3{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:var(--w);text-transform:uppercase;letter-spacing:1px;margin-bottom:.5rem}
+.srv p{font-size:.81rem;color:#AEAEA6;line-height:1.7}
+.srv-price{margin-top:1rem;font-size:.67rem;letter-spacing:2px;color:var(--g);text-transform:uppercase;font-weight:700}
+/* NOSOTROS */
+#nosotros{background:var(--d2)}
+.nos-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:768px){.nos-grid{grid-template-columns:1fr}}
+/* CALCULADORA */
+#stock{background:var(--d1)}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:4rem}
+@media(max-width:768px){.calc-grid{grid-template-columns:1fr}}
+.calc-box{background:var(--d2);border:1px solid var(--bdr);border-radius:10px;padding:2rem}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem}
+.calc-id{display:none;background:var(--d3);border-radius:8px;padding:1.5rem;margin-top:1rem}
+.calc-id.show{display:block}
+.calc-item{display:flex;gap:10px;align-items:flex-start;background:rgba(0,0,0,.2);border-radius:6px;padding:.7rem .9rem;border-left:3px solid var(--g);margin-bottom:.5rem}
+.diag-box{background:linear-gradient(135deg,var(--d2),var(--d3));border:1px solid rgba(52,152,219,.25);border-radius:12px;padding:2.5rem}
+.diag-inner{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+@media(max-width:768px){.diag-inner{grid-template-columns:1fr}}
+.diag-chips{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+.chip{display:flex;align-items:center;gap:8px;background:rgba(52,152,219,.08);border:1px solid rgba(52,152,219,.2);border-radius:6px;padding:.6rem 1rem}
+.chip.g{background:rgba(124,181,24,.07);border-color:var(--bdr)}
+.chip-t{font-size:.8rem;font-weight:600;color:var(--w)}.chip-s{font-size:.68rem;color:var(--ash)}
+.price-badge{background:rgba(52,152,219,.1);border:2px solid rgba(52,152,219,.3);border-radius:10px;padding:1.5rem 2rem;text-align:center}
+.price-num{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:900;color:var(--blue);line-height:1}
+/* RESEÑAS */
+#resenas{background:var(--d1)}
+.g-bar{display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
+.g-badge{display:flex;align-items:center;gap:11px;background:var(--d2);border:1px solid var(--bdr);border-radius:var(--r);padding:.9rem 1.4rem}
+.g-l{font-size:1.3rem;font-weight:900;color:#4285f4}
+.g-score{font-family:'Barlow Condensed',sans-serif;font-size:1.9rem;font-weight:900;color:var(--w)}
+.g-stars{color:#f9c514;font-size:.95rem}.g-count{font-size:.67rem;color:var(--ash)}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.9rem;margin-bottom:1.5rem}
+.rcard{background:var(--d2);border:1px solid rgba(255,255,255,.05);border-radius:var(--r);padding:1.3rem;transition:.2s}.rcard:hover{border-color:var(--bdr)}
+.r-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#5A8A0E,var(--g));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;color:var(--d0);flex-shrink:0}
+.r-top{display:flex;align-items:center;gap:8px;margin-bottom:.75rem}
+.r-name{font-weight:600;color:var(--w);font-size:.81rem}.r-date{font-size:.65rem;color:var(--ash)}
+.r-stars{color:#f9c514;font-size:.8rem;margin-bottom:.5rem}
+.r-txt{font-size:.78rem;color:#AEAEA6;line-height:1.7;font-style:italic}
+.r-svc span{font-size:.58rem;letter-spacing:2px;color:var(--g);text-transform:uppercase;font-weight:700;background:rgba(124,181,24,.1);padding:2px 7px;border-radius:3px}
+.rev-cta{text-align:center;padding:1.5rem;border:1px dashed rgba(255,255,255,.1);border-radius:var(--r)}
+.rev-cta p{font-size:.85rem;color:#AEAEA6;margin-bottom:1rem}
+.btn-grev{display:inline-flex;align-items:center;gap:7px;background:var(--g);color:var(--d0);border-radius:var(--r);padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-size:.96rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;transition:.2s}.btn-grev:hover{background:var(--gl)}
+/* CONTACTO */
+#contacto{background:var(--d2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.contact-grid h2{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:var(--w);text-transform:uppercase;margin-bottom:.8rem}
+.c-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.9rem}
+.c-ico{width:28px;height:28px;background:rgba(124,181,24,.1);border:1px solid var(--bdr);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--g)}
+.c-lbl{font-size:.6rem;letter-spacing:2px;color:var(--ash);text-transform:uppercase;font-weight:600}
+.c-val{font-size:.84rem;color:var(--w);margin-top:1px}
+.map-wrap{border-radius:var(--r);overflow:hidden;margin-top:1rem;height:180px}
+.map-wrap iframe{width:100%;height:100%;border:0}
+.c-form{display:flex;flex-direction:column;gap:.8rem}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+/* FOOTER */
+footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+.fbrand p{font-size:.78rem;color:#AEAEA6;line-height:1.7;margin:.6rem 0}
+.srow{display:flex;gap:.5rem;margin-top:.7rem}
+.soc{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid rgba(255,255,255,.1);border-radius:4px;font-size:.7rem;font-weight:700;color:#AEAEA6;text-transform:uppercase;transition:.2s}.soc:hover{border-color:var(--g);color:var(--g)}
+.fcol h4{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;color:var(--w);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.8rem}
+.fcol ul{list-style:none}.fcol li{margin-bottom:.3rem}
+.fcol a{font-size:.77rem;color:#AEAEA6;transition:.2s}.fcol a:hover{color:var(--g)}
+.footer-btm{display:flex;justify-content:space-between;align-items:center;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.05);font-size:.7rem;color:#7A7A72;flex-wrap:wrap;gap:.5rem}
+.admin-link{cursor:pointer;opacity:.4;transition:.2s}.admin-link:hover{opacity:1;color:var(--g)}
+/* WA flotante */
+.wa-f{position:fixed;bottom:1.5rem;right:1.5rem;z-index:800;background:#25D366;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:.2s}
+.wa-f:hover{transform:scale(1.1)}
+/* TOAST */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--d3);color:var(--w);padding:.7rem 1.4rem;border-radius:var(--r);font-size:.82rem;opacity:0;pointer-events:none;transition:.3s;z-index:9999;white-space:nowrap;border:1px solid var(--bdr)}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+/* STOCK */
+.stock-bar{display:flex;gap:.7rem;margin-bottom:1.6rem;flex-wrap:wrap}
+.ssi{flex:1;min-width:200px;background:var(--d2);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:8px 12px;color:var(--w);font-size:.86rem;outline:none;transition:.2s}.ssi:focus{border-color:var(--g)}.ssi::placeholder{color:var(--ash)}
+.ssel{background:var(--d2);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:8px 12px;color:var(--w);font-size:.86rem;outline:none;cursor:pointer}.ssel option{background:var(--d1)}
+.stock-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:.9rem;margin-bottom:1.5rem}
+.pcard{background:var(--d2);border:1px solid rgba(255,255,255,.05);border-radius:var(--r);overflow:hidden;transition:.2s;display:flex;flex-direction:column}.pcard:hover{transform:translateY(-4px);border-color:var(--bdr)}
+.pcard-img{height:145px;background:var(--d3);display:flex;align-items:center;justify-content:center;font-size:2.3rem;overflow:hidden}
+.pcard-img img{width:100%;height:100%;object-fit:cover}
+.pcard-body{padding:.85rem;flex:1;display:flex;flex-direction:column}
+.pcard-cat{font-size:.6rem;letter-spacing:2.5px;color:var(--g);text-transform:uppercase;font-weight:700;margin-bottom:.3rem}
+.pcard-name{font-family:'Barlow Condensed',sans-serif;font-size:1.02rem;font-weight:700;color:var(--w);text-transform:uppercase;margin-bottom:.3rem}
+.pcard-desc{font-size:.73rem;color:#AEAEA6;line-height:1.55;flex:1}
+.pcard-ft{display:flex;align-items:center;justify-content:space-between;margin-top:.85rem}
+.pcard-price{font-family:'Barlow Condensed',sans-serif;font-size:1.35rem;font-weight:900;color:var(--g)}
+.btn-ac{background:var(--g);color:var(--d0);border:none;border-radius:4px;padding:6px 13px;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:.2s}.btn-ac:hover{background:var(--gl)}
+.stock-empty{grid-column:1/-1;text-align:center;padding:3rem;color:var(--ash)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a class="logo-a" href="#inicio">
+    <img class="logo-img" src="imagenes/gasomotores_logo_hd.png" alt="Gasomotores" onerror="this.style.display='none'"/>
+    <div><div class="brand"><b>GASO</b>MOTORES</div><div class="sub">Mecánica Gasolina · El Vendrell</div></div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#contacto">Presupuesto</a></li>
+    <li><a href="#resenas">Reseñas</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <button class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- CARRUSEL HERO -->
+<div class="hero-wrap" id="heroWrap" onclick="moverCarrusel(1)">
+  <div class="hero-slider" id="heroSlider">
+
+    <div class="hero-slide">
+      <img src="imagenes/raptor.png" alt="Coches"
+           onerror="this.style.opacity='0'">
+      <div class="slide-cnt">
+        <span class="slide-tag">Coches · Mecánica · Diagnosis</span>
+        <div class="slide-titulo">Tu <em>coche</em><br>en manos expertas</div>
+        <div class="slide-sub">Mecánica, diagnosis y mantenimiento para todo tipo de vehículos a gasolina</div>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="imagenes/furgoneta.png" alt="Furgoneta"
+           onerror="this.style.opacity='0'">
+      <div class="slide-cnt">
+        <span class="slide-tag">Furgonetas · Vehículos comerciales</span>
+        <div class="slide-titulo">Tu <em>furgoneta</em><br>en forma</div>
+        <div class="slide-sub">Revisiones, ITV y mantenimiento preventivo para flotas y autónomos</div>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="imagenes/pcx.jpg" alt="Motos"
+           onerror="this.src='imagenes/moto2.png'">
+      <div class="slide-cnt">
+        <span class="slide-tag">Motos · Scooters · PCX · NMAX</span>
+        <div class="slide-titulo">Motos <em>a punto</em></div>
+        <div class="slide-sub">Honda PCX, Yamaha NMAX, Peugeot 125 y cualquier scooter a gasolina</div>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="imagenes/maquinaria.png" alt="Jardinería"
+           onerror="this.style.opacity='0'">
+      <div class="slide-cnt">
+        <span class="slide-tag">Jardinería · Maquinaria · Motosierras</span>
+        <div class="slide-titulo">Maquinaria<br><em>de jardín</em></div>
+        <div class="slide-sub">Cortacéspedes, desbrozadoras, motosierras y generadores a gasolina</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+
+<!-- HERO INFO -->
+<div class="hero-info" id="inicio">
+  <div class="hero-badge">Especialistas · Todo Motor a Gasolina · El Vendrell, Tarragona</div>
+  <div class="pills">
+    <span class="pill g">🚗 Coches</span><span class="pill g">🏍️ Motos</span><span class="pill g">🌿 Jardinería</span>
+    <span class="pill g">🪚 Motosierras</span><span class="pill g">🔌 Generadores</span>
+    <span class="pill">Solo motores gasolina</span>
+  </div>
+  <div class="dom-band">
+    <span style="font-size:1.3rem">🚗</span>
+    <div><div class="dom-t">Servicio a domicilio</div><div class="dom-s">10 km desde El Vendrell · Tarragona</div></div>
+    <div class="dom-price">+30€</div>
+  </div>
+  <div class="hero-btns">
+    <a href="https://wa.me/34627504355?text=Hola%20Gasomotores.%20Quiero%20un%20presupuesto%20para%20mi%20veh%C3%ADculo." target="_blank" class="btn btn-g" style="padding:12px 26px">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      📩 Presupuesto
+    </a>
+    <a href="#contacto" class="btn btn-ghost" style="padding:12px 26px">💬 Contactar</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="sn">+800</div><div class="sl">Clientes atendidos</div></div>
+    <div><div class="sn">4.9★</div><div class="sl">Google reviews</div></div>
+    <div><div class="sn">+12</div><div class="sl">Años experiencia</div></div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="container">
+    <div class="sec-head"><div class="tag">Qué hacemos</div><h2 class="sec-title" style="margin-top:.5rem">Nuestros <span>Servicios</span></h2></div>
+    <div class="srv-grid">
+      <div class="srv"><div class="srv-num">01</div><svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="13" stroke="currentColor" stroke-width="2"/><path d="M26 18v8l5 3M13 26H9M43 26h-4M26 9V5M26 47v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Mecánica Ligera</h3><p>Revisiones y diagnóstico electrónico para todo tipo de motores a gasolina.</p><div class="srv-price">Consultar precio</div></div>
+      <div class="srv"><div class="srv-num">02</div><svg viewBox="0 0 52 52" fill="none"><rect x="8" y="18" width="36" height="20" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 18V14a2 2 0 012-2h16a2 2 0 012 2v4" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="28" r="3" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="28" r="3" stroke="currentColor" stroke-width="2"/></svg><h3>Revisión para ITV</h3><p>Preparamos tu vehículo para superar la ITV sin sorpresas.</p><div class="srv-price">Desde 45€</div></div>
+      <div class="srv"><div class="srv-num">03</div><svg viewBox="0 0 52 52" fill="none"><circle cx="16" cy="36" r="8" stroke="currentColor" stroke-width="2"/><circle cx="36" cy="36" r="8" stroke="currentColor" stroke-width="2"/><path d="M16 28V20h8l6-8h10v16" stroke="currentColor" stroke-width="2"/></svg><h3>Pastillas de Frenos</h3><p>Sustitución de pastillas y discos. Sistema de frenado revisado al completo.</p><div class="srv-price">Desde 60€/eje</div></div>
+      <div class="srv"><div class="srv-num">04</div><svg viewBox="0 0 52 52" fill="none"><ellipse cx="26" cy="30" rx="13" ry="9" stroke="currentColor" stroke-width="2"/><path d="M18 22L14 12M34 22l4-12M26 20V9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Cambio de Aceite</h3><p>Aceite y filtros para motores 2T y 4T. Coches, motos y maquinaria.</p><div class="srv-price">Desde 35€</div></div>
+      <div class="srv"><div class="srv-num">05</div><svg viewBox="0 0 52 52" fill="none"><rect x="10" y="20" width="14" height="18" rx="2" stroke="currentColor" stroke-width="2"/><rect x="10" y="14" width="14" height="8" rx="1" stroke="currentColor" stroke-width="2"/><path d="M24 30h8a6 6 0 010 12H24" stroke="currentColor" stroke-width="2"/></svg><h3>Cambio de Arranque</h3><p>Diagnóstico y sustitución en coches, cortacéspedes y motosierras.</p><div class="srv-price">Desde 80€</div></div>
+      <div class="srv"><div class="srv-num">06</div><svg viewBox="0 0 52 52" fill="none"><path d="M10 26h4l4-8 6 16 4-10 4 4 4-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Detección de Fallas</h3><p>Diagnóstico electrónico OBD. Identificamos la avería exacta.</p><div class="srv-price">Desde 25€</div></div>
+      <div class="srv"><div class="srv-num">07</div><svg viewBox="0 0 52 52" fill="none"><path d="M26 10l4 4-14 14-4-4 14-14z" stroke="currentColor" stroke-width="2"/><path d="M16 28l-6 6a3 3 0 004 4l6-6" stroke="currentColor" stroke-width="2"/><circle cx="36" cy="18" r="4" stroke="currentColor" stroke-width="2"/></svg><h3>Mantenimiento Preventivo</h3><p>Filtros, bujías, correas y revisión integral por km o temporada.</p><div class="srv-price">Desde 55€</div></div>
+      <div class="srv"><div class="srv-num">08</div><svg viewBox="0 0 52 52" fill="none"><path d="M10 30l12-12 4 4-12 12-4-4z" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="34" r="8" stroke="currentColor" stroke-width="2"/><path d="M30 34h8M34 30v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Mantenimiento Correctivo</h3><p>Reparación precisa de averías. Presupuesto siempre sin compromiso.</p><div class="srv-price">Presupuesto sin compromiso</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="container">
+    <div class="nos-grid">
+      <div>
+        <div class="tag">Quiénes somos</div>
+        <h2 class="sec-title" style="margin-top:.5rem">+12 años<br><span>arreglando motores</span></h2>
+        <p style="font-size:.87rem;color:#AEAEA6;line-height:1.8;margin-top:1rem">En <strong style="color:var(--w)">Gasomotores</strong> somos especialistas en todo motor a gasolina. Coches, motos,  cortacéspedes, desbrozadoras, motosierras, motocultures y generadores.</p>
+        <p style="font-size:.87rem;color:#AEAEA6;line-height:1.8;margin-top:.7rem">Ofrecemos <strong style="color:var(--g)">servicio a domicilio en Tarragona</strong> por solo <strong style="color:var(--g)">30€ de recargo</strong>. Presupuesto siempre sin compromiso y garantía en todos los trabajos.</p>
+        <div style="display:inline-flex;align-items:center;gap:7px;background:rgba(124,181,24,.07);border:1px solid var(--bdr);border-radius:4px;padding:7px 12px;margin-top:1.2rem;font-size:.73rem;color:var(--g)">🕐 Lu–Vi: 8:00–18:00 &nbsp;|&nbsp; Sá: 9:00–14:00</div>
+      </div>
+      <div style="text-align:center">
+        <div style="background:var(--d3);border:1px solid var(--bdr);border-radius:10px;padding:2rem;position:relative">
+          <div style="font-size:5rem;margin-bottom:1rem">🔧</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:var(--w);text-transform:uppercase;letter-spacing:1px">Todo motor a gasolina</div>
+          <div style="font-size:.8rem;color:var(--ash);margin-top:.4rem">El Vendrell · Tarragona · Servicio 10km</div>
+          <div style="position:absolute;bottom:-14px;right:-14px;background:var(--g);color:var(--d0);border-radius:6px;padding:.8rem 1rem;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase"><span style="font-size:1.8rem;font-weight:900;display:block;line-height:1">+800</span>Clientes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULADORA + DIAGNÓSTICO -->
+<section id="stock">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">Servicios inteligentes</div>
+      <h2 class="sec-title" style="margin-top:.5rem">Calculadora de <span>Mantenimiento</span></h2>
+      <p style="color:#AEAEA6;font-size:.9rem;line-height:1.75;margin-top:.8rem;max-width:600px;margin-inline:auto">Mete tu coche y kilómetros — te decimos exactamente qué necesita tu motor.</p>
+    </div>
+    <div class="calc-grid">
+      <div class="calc-box">
+        <div class="calc-row">
+          <div class="fg"><label class="fl">Marca / Modelo</label><input class="fi" id="calcMarca" placeholder="Ford Focus 1.6…"/></div>
+          <div class="fg"><label class="fl">Kilómetros actuales</label><input class="fi" id="calcKm" type="number" placeholder="85000"/></div>
+        </div>
+        <div class="calc-row">
+          <div class="fg"><label class="fl">Último cambio aceite</label>
+            <select class="fsel" id="calcUltimoAceite">
+              <option value="">No lo sé</option>
+              <option value="5000">Hace menos de 5.000 km</option>
+              <option value="10000">Entre 5.000 y 10.000 km</option>
+              <option value="15000">Entre 10.000 y 15.000 km</option>
+              <option value="20000">Hace más de 15.000 km</option>
+            </select>
+          </div>
+          <div class="fg"><label class="fl">¿Algún síntoma?</label>
+            <select class="fsel" id="calcSintoma">
+              <option value="">Sin síntomas</option>
+              <option value="luz">Luz avería encendida</option>
+              <option value="ruido">Ruido al arrancar</option>
+              <option value="consume">Consume más de lo normal</option>
+              <option value="itv">Próxima ITV</option>
+              <option value="tirones">Tirones al acelerar</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-g" style="width:100%;justify-content:center;padding:11px" onclick="calcularMantenimiento()">🔍 Analizar mi vehículo</button>
+        <div class="calc-id" id="calcResultado">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;color:var(--w);text-transform:uppercase;letter-spacing:1px;margin-bottom:.8rem" id="calcTitle"></div>
+          <div id="calcItems"></div>
+          <div style="background:rgba(0,0,0,.2);border-radius:6px;padding:1rem;margin-top:1rem;font-size:.84rem;color:#AEAEA6">Servicio a domicilio · <strong style="color:var(--g)">10 km alrededor de El Vendrell</strong></div>
+          <a id="calcWaBtn" href="#" target="_blank" class="btn btn-g" style="width:100%;justify-content:center;padding:11px;margin-top:1rem">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Pedir presupuesto por WhatsApp
+          </a>
+        </div>
+      </div>
+      <!-- DIAGNÓSTICO EXPRESS -->
+      <div class="diag-box">
+        <div class="diag-inner">
+          <div>
+            <div style="font-size:.65rem;letter-spacing:3px;color:var(--g);text-transform:uppercase;font-weight:700;margin-bottom:.5rem">Servicio premium</div>
+            <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:var(--w);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.2rem">📡 Diagnóstico <span style="color:var(--blue)">Express</span></h3>
+            <div class="diag-chips">
+              <div class="chip"><span style="font-size:1.2rem">⚡</span><div><div class="chip-t">Resultado inmediato</div><div class="chip-s">En menos de 20 minutos</div></div></div>
+              <div class="chip g"><span style="font-size:1.2rem">🚗</span><div><div class="chip-t">Domicilio incluido</div><div class="chip-s">10 km desde El Vendrell</div></div></div>
+            </div>
+            <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+              <a href="https://wa.me/34627504355?text=Hola%2C%20quiero%20un%20diagnóstico%20express" target="_blank" class="btn btn-g" style="padding:12px 22px">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Reservar diagnóstico
+              </a>
+              <a href="tel:+34627504355" class="btn btn-ghost" style="padding:12px 22px">📞 Llamar ahora</a>
+            </div>
+          </div>
+          <div class="price-badge">
+            <div class="price-num">60€</div>
+            <div style="font-size:.68rem;letter-spacing:2px;color:var(--ash);text-transform:uppercase;margin-top:.3rem">Diagnóstico escáner</div>
+            <div style="font-size:.65rem;color:var(--g);margin-top:.5rem;font-weight:600">Domicilio incluido</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- REPUESTOS -->
+    <div class="sec-head"><div class="tag">Repuestos</div><h2 class="sec-title" style="margin-top:.5rem">Catálogo <span>Online</span></h2></div>
+    <div class="stock-bar">
+      <input class="ssi" id="stockSearch" placeholder="🔍 Buscar repuesto…" oninput="renderStock()"/>
+      <select class="ssel" id="stockCat" onchange="renderStock()">
+        <option value="">Todas las categorías</option>
+        <option>Aceites</option><option>Filtros</option><option>Frenos</option>
+        <option>Encendido</option><option>Arranque</option><option>Jardín</option><option>Otros</option>
+      </select>
+    </div>
+    <div class="stock-grid" id="stockGrid"></div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section id="resenas" style="background:var(--d1)">
+  <div class="container">
+    <div class="sec-head"><div class="tag">Lo que dicen</div><h2 class="sec-title" style="margin-top:.5rem">Reseñas <span>Google</span></h2></div>
+    <div class="g-bar"><div class="g-badge"><span class="g-l">G</span><div style="display:flex;align-items:center;gap:10px"><span class="g-score">4.9</span><div><div class="g-stars">★★★★★</div><div class="g-count">+120 reseñas verificadas</div></div></div></div></div>
+    <div class="rev-grid" id="reviewsGrid"></div>
+    <div class="rev-cta">
+      <p>¿Has visitado Gasomotores? Tu reseña ayuda a más personas a encontrarnos. ¡Solo 1 minuto!</p>
+      <a href="https://g.page/r/CWoYypWQV0l6EBM/review" target="_blank" class="btn-grev">⭐ Dejar reseña en Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" style="background:var(--d2)">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="tag" style="margin-bottom:.5rem">Encuéntranos</div>
+        <h2>Estamos en <span style="color:var(--g)">Tarragona</span></h2>
+        <p style="font-size:.85rem;color:#AEAEA6;margin:.6rem 0 1.2rem">Servicio a domicilio <strong style="color:var(--g)">10 km alrededor de El Vendrell</strong> por solo <strong style="color:var(--g)">30€</strong>.</p>
+        <div class="c-item"><div class="c-ico"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><div class="c-lbl">Dirección</div><div class="c-val">Calle de la Mecánica, 12 · 43700 El Vendrell</div></div></div>
+        <div class="c-item"><div class="c-ico"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><div class="c-lbl">Teléfono</div><div class="c-val"><a href="tel:+34627504355">+34 627 50 43 55</a></div></div></div>
+        <div class="c-item"><div class="c-ico" style="color:var(--g)"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div><div><div class="c-lbl">WhatsApp</div><div class="c-val"><a href="https://wa.me/34627504355" target="_blank" style="color:var(--g)">Escríbenos directamente</a></div></div></div>
+        <div class="c-item"><div class="c-ico"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:info@gasomotores.com.es">info@gasomotores.com.es</a></div></div></div>
+        <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12149.975!2d1.2445!3d41.1187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xebe5c3a2e6b3b3b3%3A0x0!2sTarragona!5e0!3m2!1ses!2ses!4v1" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div>
+        <div class="tag" style="margin-bottom:.5rem">Escríbenos</div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:var(--w);text-transform:uppercase;margin-bottom:1.2rem">Pide tu <span style="color:var(--g)">presupuesto</span></h3>
+        <div class="c-form">
+          <div class="row2"><div class="fg"><label class="fl">Nombre *</label><input class="fi" id="cName" placeholder="Tu nombre"/></div><div class="fg"><label class="fl">Teléfono *</label><input class="fi" id="cPhone" type="tel" placeholder="+34 6XX"/></div></div>
+          <div class="fg"><label class="fl">Vehículo / Maquinaria</label><input class="fi" id="cVeh" placeholder="Ford Focus 1.6 / Cortacésped Honda…"/></div>
+          <div class="fg"><label class="fl">Servicio</label>
+            <select class="fsel" id="cSvc"><option value="">Seleccionar…</option><option>Mecánica ligera</option><option>Revisión ITV</option><option>Cambio pastillas frenos</option><option>Cambio de aceite</option><option>Cambio de arranque</option><option>Detección de fallas</option><option>Mantenimiento preventivo</option><option>Mantenimiento correctivo</option><option>Servicio a domicilio (+30€)</option><option>Otro</option></select>
+          </div>
+          <div class="fg"><label class="fl">Mensaje</label><textarea class="fta" id="cMsg" placeholder="Cuéntanos qué le pasa a tu motor…"></textarea></div>
+          <div class="form-ok" id="cFormOk">✅ Redirigiendo a WhatsApp…</div>
+          <button class="btn btn-g" onclick="sendContact()" style="align-self:flex-start">Enviar →</button>
+          <p style="font-size:.67rem;color:var(--ash)">O escríbenos por <a href="https://wa.me/34627504355" target="_blank" style="color:var(--g)">WhatsApp</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="fbrand">
+        <a class="logo-a" href="#inicio" style="margin-bottom:.6rem">
+          <img class="logo-img" src="imagenes/gasomotores_logo_hd.png" alt="Gasomotores" onerror="this.style.display='none'"/>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:900;color:var(--w);letter-spacing:2px"><b style="color:var(--g)">GASO</b>MOTORES</span>
+        </a>
+        <p>Especialistas en motores a gasolina en Tarragona. Servicio a domicilio. +12 años de experiencia.</p>
+        <div class="srow"><a class="soc" href="#">fb</a><a class="soc" href="#">ig</a><a class="soc" href="https://wa.me/34627504355" target="_blank">wa</a></div>
+      </div>
+      <div class="fcol"><h4>Servicios</h4><ul><li><a href="#servicios">Mecánica ligera</a></li><li><a href="#servicios">Revisión ITV</a></li><li><a href="#servicios">Cambio de aceite</a></li><li><a href="#servicios">Pastillas frenos</a></li><li><a href="#servicios">Cambio arranque</a></li><li><a href="#servicios">Detección fallas</a></li></ul></div>
+      <div class="fcol"><h4>Empresa</h4><ul><li><a href="#nosotros">Quiénes somos</a></li><li><a href="#resenas">Reseñas</a></li><li><a href="#contacto">Contacto</a></li><li><a href="https://wa.me/34627504355" target="_blank">WhatsApp</a></li><li><a href="https://g.page/r/CWoYypWQV0l6EBM/review" target="_blank">Dejar reseña ⭐</a></li></ul></div>
+      <div class="fcol"><h4>Horario</h4><ul><li><a href="#">Lunes – Viernes</a></li><li><a href="#" style="color:var(--g)">8:00 – 18:00</a></li><li><a href="#">Sábados</a></li><li><a href="#" style="color:var(--g)">9:00 – 14:00</a></li><li><a href="#" style="color:var(--red)">Domingo: Cerrado</a></li></ul></div>
+    </div>
+    <div class="footer-btm">
+      <span>© 2025 Gasomotores · Mecánica Gasolina Tarragona</span>
+      <span><a href="#">Aviso legal</a> · <a href="#">Privacidad</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-f" href="https://wa.me/34627504355?text=Hola%20Gasomotores" target="_blank">
+  <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<div class="toast" id="toast"></div>
+
+<script>
+// ── DATOS ──
+const K = {S:'gm_s', O:'gm_o', R:'gm_r', C:'gm_c'};
+const DB = {
+  g: (k) => { try { return JSON.parse(localStorage.getItem(k)||'[]'); } catch { return []; } },
+  s: (k,v) => { try { localStorage.setItem(k,JSON.stringify(v)); } catch {} },
+  stock: () => DB.g(K.S),
+  ss: (d) => DB.s(K.S,d),
+  orders: () => DB.g(K.O),
+  so: (d) => DB.s(K.O,d),
+  cart: () => DB.g(K.C),
+  sc: (d) => DB.s(K.C,d),
+};
+
+const DS = [
+  {id:1001,name:'Aceite 5W30 Sintético 1L',cat:'Aceites',price:12.90,units:24,desc:'ACEA A5/B5. Motores gasolina 4T.',img:'imagenes/maquinaria 2.png'},
+  {id:1002,name:'Aceite 2T Motosierra 1L',cat:'Aceites',price:9.50,units:14,desc:'Motores 2T: motosierras, desbrozadoras.',img:'imagenes/maquinaria 2.png'},
+  {id:1003,name:'Filtro de Aceite Universal',cat:'Filtros',price:8.50,units:18,desc:'Ref: OC195. Varios modelos.',img:'imagenes/maquinaria 3.png'},
+  {id:1004,name:'Filtro de Aire Cortacésped',cat:'Filtros',price:6.80,units:22,desc:'Honda, Husqvarna, Briggs & Stratton.',img:'imagenes/maquinaria 3.png'},
+  {id:1005,name:'Pastillas Freno Delanteras',cat:'Frenos',price:28.00,units:7,desc:'Juego 4 pastillas.',img:'imagenes/raptor.png'},
+  {id:1006,name:'Bujía NGK BPR6ES',cat:'Encendido',price:4.20,units:40,desc:'Motores gasolina 4T.',img:'imagenes/moto2.png'},
+  {id:1007,name:'Motor Arranque Reacondicionado',cat:'Arranque',price:89.00,units:3,desc:'Coches gasolina 1.4–2.0L.',img:'imagenes/moto2.png'},
+  {id:1008,name:'Carburador Motosierra',cat:'Jardín',price:18.00,units:6,desc:'Stihl y Husqvarna pequeñas.',img:'imagenes/maquinaria.png'},
+  {id:1009,name:'Bobina Encendido Honda GCV',cat:'Jardín',price:22.50,units:9,desc:'Honda GCV160/190.',img:'imagenes/maquinaria.png'},
+  {id:1010,name:'Kit Correa Distribución',cat:'Otros',price:55.00,units:2,desc:'Con tensores. Varios modelos.',img:'imagenes/furgoneta.png'},
+];
+
+// inicializa stock si está vacío
+if (!DB.stock().length) DB.ss(DS);
+
+const REVIEWS = [
+  {name:'Carlos M.',date:'Enero 2025',stars:5,txt:'Excelente servicio. Repararon mi cortacésped en el día y quedó perfecto.',svc:'Cambio de arranque'},
+  {name:'Laura G.',date:'Febrero 2025',stars:5,txt:'Muy profesionales. Diagnosticaron el problema de mi moto rápidamente.',svc:'Diagnóstico OBD'},
+  {name:'Miquel F.',date:'Marzo 2025',stars:5,txt:'El servicio a domicilio es una pasada. Vinieron a casa y solucionaron todo.',svc:'Servicio a domicilio'},
+  {name:'Ana R.',date:'Abril 2025',stars:4,txt:'Muy buena atención y precio justo. Recomendable para revisión ITV.',svc:'Revisión ITV'},
+  {name:'Jordi P.',date:'Mayo 2025',stars:5,txt:'Cambiaron el aceite de mi desbrozadora y la dejaron como nueva. 10/10.',svc:'Cambio de aceite'},
+  {name:'Maria T.',date:'Junio 2025',stars:5,txt:'Repararon mi generador cuando más lo necesitaba. Servicio rápido y eficaz.',svc:'Mecánica ligera'},
+];
+
+// ── NAV ──
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.background = window.scrollY > 60 ? 'rgba(20,20,16,.98)' : 'rgba(20,20,16,.95)';
+});
+
+// ── CARRUSEL ──
+let indiceFoto = 0;
+const totalFotos = 4;
+
+function moverCarrusel(dir) {
+  indiceFoto += dir;
+  if (indiceFoto >= totalFotos) indiceFoto = 0;
+  if (indiceFoto < 0) indiceFoto = totalFotos - 1;
+  document.getElementById('heroSlider').style.transform = 'translateX(' + (indiceFoto * -100) + '%)';
+  document.querySelectorAll('.dot').forEach(function(d, i) {
+    d.classList.toggle('active', i === indiceFoto);
+  });
+}
+
+// autoplay — se pausa al pasar el ratón
+let autoplay = setInterval(function() { moverCarrusel(1); }, 5000);
+document.getElementById('heroWrap').addEventListener('mouseenter', function() { clearInterval(autoplay); });
+document.getElementById('heroWrap').addEventListener('mouseleave', function() {
+  autoplay = setInterval(function() { moverCarrusel(1); }, 5000);
+});
+
+// ── TOAST ──
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('on');
+  clearTimeout(t._t);
+  t._t = setTimeout(function() { t.classList.remove('on'); }, 3000);
+}
+
+// ── RESEÑAS ──
+function renderReviews() {
+  document.getElementById('reviewsGrid').innerHTML = REVIEWS.map(function(r) {
+    return '<div class="rcard"><div class="r-top"><div class="r-av">' + r.name[0] + '</div><div><div class="r-name">' + r.name + '</div><div class="r-date">' + r.date + '</div></div></div><div class="r-stars">' + '★'.repeat(r.stars) + '</div><div class="r-txt">"' + r.txt + '"</div><div class="r-svc" style="margin-top:.6rem"><span>' + r.svc + '</span></div></div>';
+  }).join('');
+}
+
+// ── STOCK ──
+function renderStock() {
+  const q = document.getElementById('stockSearch').value.toLowerCase();
+  const cat = document.getElementById('stockCat').value;
+  const items = DB.stock().filter(function(p) {
+    return (!q || p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)) && (!cat || p.cat === cat);
+  });
+  document.getElementById('stockGrid').innerHTML = items.length
+    ? items.map(function(p) {
+        return '<div class="pcard"><div class="pcard-img">' + (p.img ? '<img src="' + p.img + '" alt="' + p.name + '">' : '🔧') + '</div><div class="pcard-body"><div class="pcard-cat">' + p.cat + '</div><div class="pcard-name">' + p.name + '</div><div class="pcard-desc">' + p.desc + '</div><div class="pcard-ft"><span class="pcard-price">' + p.price.toFixed(2) + '€</span><button class="btn-ac" onclick="addToCart(' + p.id + ')">+ Añadir</button></div></div></div>';
+      }).join('')
+    : '<div class="stock-empty">No se encontraron productos</div>';
+}
+
+// ── CARRITO (simple) ──
+function addToCart(id) {
+  const p = DB.stock().find(function(x) { return x.id === id; });
+  if (!p) return;
+  const cart = DB.cart();
+  const ex = cart.find(function(x) { return x.id === id; });
+  if (ex) { ex.qty = (ex.qty || 1) + 1; } else { cart.push({id: p.id, name: p.name, price: p.price, qty: 1}); }
+  DB.sc(cart);
+  toast('"' + p.name + '" añadido al carrito');
+}
+
+// ── CALCULADORA ──
+function calcularMantenimiento() {
+  const marca = document.getElementById('calcMarca').value.trim();
+  const km = parseInt(document.getElementById('calcKm').value) || 0;
+  if (!marca || !km) { toast('Introduce el modelo y los kilómetros'); return; }
+  const aceite = document.getElementById('calcUltimoAceite').value;
+  const sintoma = document.getElementById('calcSintoma').value;
+  const items = [];
+  const c = {urgente:'#e74c3c', pronto:'#f39c12', ok:'#7CB518'};
+  const ic = {urgente:'🔴', pronto:'🟡', ok:'🟢'};
+
+  if (!aceite || aceite === '20000' || km > 15000) items.push({i:'🛢️',t:'Cambio de aceite y filtro',d:'Necesario — más de 15.000 km o sin registros',u:'urgente'});
+  else if (aceite === '15000') items.push({i:'🛢️',t:'Cambio de aceite',d:'Recomendado próximamente',u:'pronto'});
+  else items.push({i:'🛢️',t:'Aceite en buen estado',d:'Cambio no necesario todavía',u:'ok'});
+
+  if (km > 60000) items.push({i:'🌀',t:'Filtro de aire',d:'Recomendable revisar a partir de 60.000 km',u:'pronto'});
+  if (km > 80000) items.push({i:'🔑',t:'Revisión bujías',d:'Vida útil aproximada 80.000 km',u:'pronto'});
+  if (km > 120000) items.push({i:'⚙️',t:'Correa de distribución',d:'Revisión urgente — límite superado',u:'urgente'});
+  if (sintoma === 'luz') items.push({i:'📡',t:'Diagnóstico Escáner Express',d:'Lectura de códigos de error — 60€ domicilio incluido',u:'urgente'});
+  if (sintoma === 'ruido') items.push({i:'🔧',t:'Revisión motor / arranque',d:'Ruido al arrancar puede indicar motor de arranque desgastado',u:'urgente'});
+  if (sintoma === 'consume') items.push({i:'🌀',t:'Revisión filtros + bujías',d:'El exceso de consumo suele deberse a filtros sucios',u:'pronto'});
+  if (sintoma === 'itv') items.push({i:'🚗',t:'Revisión pre-ITV',d:'Preparación completa — desde 45€',u:'pronto'});
+  if (sintoma === 'tirones') items.push({i:'📡',t:'Diagnóstico Escáner Express',d:'Los tirones suelen tener código de error — 60€ domicilio incluido',u:'urgente'});
+
+  document.getElementById('calcTitle').textContent = marca + ' · ' + km.toLocaleString('es-ES') + ' km';
+  document.getElementById('calcItems').innerHTML = items.map(function(it) {
+    return '<div class="calc-item" style="border-left-color:' + (c[it.u]||'#7A7A72') + '"><span style="font-size:1.2rem;flex-shrink:0">' + it.i + '</span><div><div style="font-weight:600;color:var(--w);font-size:.84rem">' + ic[it.u] + ' ' + it.t + '</div><div style="font-size:.72rem;color:#AEAEA6;margin-top:2px">' + it.d + '</div></div></div>';
+  }).join('');
+  const msg = encodeURIComponent('Hola Gasomotores, tengo un ' + marca + ' con ' + km.toLocaleString('es-ES') + ' km. Necesito: ' + items.map(function(i) { return i.t; }).join(', ') + '. ¿Podéis darme cita?');
+  document.getElementById('calcWaBtn').href = 'https://wa.me/34627504355?text=' + msg;
+  document.getElementById('calcResultado').classList.add('show');
+}
+
+// ── CONTACTO ──
+function sendContact() {
+  const name = document.getElementById('cName').value.trim();
+  const phone = document.getElementById('cPhone').value.trim();
+  if (!name || !phone) { toast('Nombre y teléfono obligatorios'); return; }
+  const wa = encodeURIComponent('Hola Gasomotores, soy ' + name + ' (' + phone + ').\nVehículo: ' + (document.getElementById('cVeh').value || '—') + '\nServicio: ' + (document.getElementById('cSvc').value || 'Consulta') + '\n' + document.getElementById('cMsg').value);
+  const ok = document.getElementById('cFormOk');
+  ok.classList.add('show');
+  setTimeout(function() { window.open('https://wa.me/34627504355?text=' + wa, '_blank'); ok.classList.remove('show'); }, 900);
+}
+
+// ── INIT ──
+document.addEventListener('DOMContentLoaded', function() {
+  renderReviews();
+  renderStock();
+});
+</script>
+</body>
+</html>
