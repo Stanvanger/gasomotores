@@ -1,20 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- Soy estudiante de primer año y este proyecto es mi práctica: mejoré SEO, accesibilidad y estructura para que se vea atractivo y profesional -->
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Gasomotores | Taller Mecánica Gasolina Tarragona</title>
-<meta name="description" content="Gasomotores – Taller especializado en motores a gasolina en El Vendrell, Tarragona."/>
+<title>Gasomotores | Taller Mecánica Gasolina en El Vendrell, Tarragona</title>
+<meta name="description" content="Gasomotores – Taller especializado en motores a gasolina en El Vendrell, Tarragona. Servicio a domicilio, revisión ITV y mantenimiento de maquinaria de jardín."/>
+<meta name="keywords" content="Gasomotores, taller gasolina, El Vendrell, mecánica, revisión ITV, servicio a domicilio, mantenimiento motos, cortacéspedes"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Gasomotores · Stan Vanger"/>
+<meta name="theme-color" content="#141410"/>
+<link rel="canonical" href="https://stanvanger.github.io/gasomotores/"/>
 <link rel="icon" href="imagenes/favicon_gasomotores.png" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet"/>
+<meta property="og:title" content="Gasomotores | Taller Mecánica Gasolina en El Vendrell"/>
+<meta property="og:description" content="Especialistas en motores a gasolina en Tarragona: revisiones, ITV, cambio de aceite y servicio a domicilio."/>
+<meta property="og:image" content="https://stanvanger.github.io/gasomotores/imagenes/gasomotores_logo_hd.png"/>
+<meta property="og:url" content="https://stanvanger.github.io/gasomotores/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Gasomotores | Taller Mecánica Gasolina en El Vendrell"/>
+<meta name="twitter:description" content="Especialistas en motores a gasolina en Tarragona: revisiones, ITV, cambio de aceite y servicio a domicilio."/>
+<meta name="twitter:image" content="https://stanvanger.github.io/gasomotores/imagenes/gasomotores_logo_hd.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Gasomotores",
+  "image": "https://stanvanger.github.io/gasomotores/imagenes/gasomotores_logo_hd.png",
+  "@id": "https://stanvanger.github.io/gasomotores/",
+  "url": "https://stanvanger.github.io/gasomotores/",
+  "telephone": "+34627504355",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle de la Mecánica, 12",
+    "addressLocality": "El Vendrell",
+    "addressRegion": "Tarragona",
+    "postalCode": "43700",
+    "addressCountry": "ES"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00"}
+  ],
+  "sameAs": ["https://stanvanger.github.io/gasomotores/", "https://wa.me/34627504355"]
+}
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--g:#7CB518;--gl:#9DD62A;--d0:#141410;--d1:#1A1A16;--d2:#222220;--d3:#2A2A26;--ash:#7A7A72;--w:#F0F0E8;--bdr:rgba(124,181,24,.22);--r:6px;--blue:#3498db;--red:#c0392b;--yel:#f39c12}
 body{font-family:'Exo 2',sans-serif;background:var(--d0);color:#CCCCC4;overflow-x:hidden}
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 button,input,select,textarea{font-family:'Exo 2',sans-serif}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--g);outline-offset:3px}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:var(--g)}
 .hidden{display:none!important}.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .tag{font-size:.67rem;letter-spacing:3px;color:var(--g);text-transform:uppercase;font-weight:700}
 .tag::before{content:'— '}.tag::after{content:' —'}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:var(--w);text-transform:uppercase;letter-spacing:2px;line-height:1.05}
@@ -183,9 +227,9 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
 <body>
 
 <!-- NAV -->
-<nav class="nav" id="nav">
-  <a class="logo-a" href="#inicio">
-    <img class="logo-img" src="imagenes/gasomotores_logo_hd.png" alt="Gasomotores" onerror="this.style.display='none'"/>
+<nav class="nav" id="nav" aria-label="Navegación principal">
+  <a class="logo-a" href="#inicio" aria-label="Ir al inicio">
+    <img class="logo-img" src="imagenes/gasomotores_logo_hd.png" alt="Logo Gasomotores" onerror="this.style.display='none'"/>
     <div><div class="brand"><b>GASO</b>MOTORES</div><div class="sub">Mecánica Gasolina · El Vendrell</div></div>
   </a>
   <ul class="nav-links" id="navLinks">
@@ -196,16 +240,17 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
     <li><a href="#resenas">Reseñas</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
-  <button class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <button class="burger" onclick="toggleMenu()" aria-label="Abrir menú principal" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<main>
+  <h1 class="visually-hidden">Gasomotores - Taller de mecánica gasolina en El Vendrell, Tarragona</h1>
 
-<!-- CARRUSEL HERO -->
-<div class="hero-wrap" id="heroWrap" onclick="moverCarrusel(1)">
-  <div class="hero-slider" id="heroSlider">
+  <!-- CARRUSEL HERO -->
+  <section class="hero-wrap" id="heroWrap" onclick="moverCarrusel(1)" role="button" tabindex="0" aria-label="Avanzar al siguiente slide" onkeydown="if(event.key==='Enter'||event.key===' ') moverCarrusel(1);">
+    <div class="hero-slider" id="heroSlider">
 
     <div class="hero-slide">
-      <img src="imagenes/raptor.png" alt="Coches"
-           onerror="this.style.opacity='0'">
+      <img src="imagenes/raptor.png" alt="Coche recibiendo mantenimiento" onerror="this.style.opacity='0'">
       <div class="slide-cnt">
         <span class="slide-tag">Coches · Mecánica · Mantenimiento</span>
         <div class="slide-titulo">Tu <em>coche</em><br>en manos expertas</div>
@@ -214,8 +259,7 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
     </div>
 
     <div class="hero-slide">
-      <img src="imagenes/furgoneta.png" alt="Furgoneta"
-           onerror="this.style.opacity='0'">
+      <img src="imagenes/furgoneta.png" alt="Furgoneta de servicio mecánico" onerror="this.style.opacity='0'">
       <div class="slide-cnt">
         <span class="slide-tag">Furgonetas · Vehículos comerciales</span>
         <div class="slide-titulo">Tu <em>furgoneta</em><br>en forma</div>
@@ -224,8 +268,7 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
     </div>
 
     <div class="hero-slide">
-      <img src="imagenes/pcx.jpg" alt="Motos"
-           onerror="this.src='imagenes/moto2.png'">
+      <img src="imagenes/pcx.jpg" alt="Moto de scooter en taller" onerror="this.src='imagenes/moto2.png'">
       <div class="slide-cnt">
         <span class="slide-tag">Motos · Scooters · PCX · NMAX</span>
         <div class="slide-titulo">Motos <em>a punto</em></div>
@@ -234,9 +277,7 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
     </div>
 
     <div class="hero-slide">
-      <img src="imagenes/maquinaria.png" alt="Jardinería"
-           onerror="this.style.opacity='0'">
-      <div class="slide-cnt">
+      <img src="imagenes/maquinaria.png" alt="Maquinaria de jardín y equipos gasolina" onerror="this.style.opacity='0'">
         <span class="slide-tag">Jardinería · Maquinaria · Motosierras</span>
         <div class="slide-titulo">Maquinaria<br><em>de jardín</em></div>
         <div class="slide-sub">Cortacéspedes, desbrozadoras, motosierras y generadores a gasolina</div>
@@ -280,9 +321,9 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
 </div>
 
 <!-- SERVICIOS -->
-<section id="servicios">
+<section id="servicios" aria-labelledby="servicios-title">
   <div class="container">
-    <div class="sec-head"><div class="tag">Qué hacemos</div><h2 class="sec-title" style="margin-top:.5rem">Nuestros <span>Servicios</span></h2></div>
+    <div class="sec-head"><div class="tag">Qué hacemos</div><h2 class="sec-title" id="servicios-title" style="margin-top:.5rem">Nuestros <span>Servicios</span></h2></div>
     <div class="srv-grid">
       <div class="srv"><div class="srv-num">01</div><svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="13" stroke="currentColor" stroke-width="2"/><path d="M26 18v8l5 3M13 26H9M43 26h-4M26 9V5M26 47v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Mecánica Ligera</h3><p>Revisiones y reparaciones mecánicas para todo tipo de motores a gasolina.</p><div class="srv-price">Consultar precio</div></div>
       <div class="srv"><div class="srv-num">02</div><svg viewBox="0 0 52 52" fill="none"><rect x="8" y="18" width="36" height="20" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 18V14a2 2 0 012-2h16a2 2 0 012 2v4" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="28" r="3" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="28" r="3" stroke="currentColor" stroke-width="2"/></svg><h3>Revisión para ITV</h3><p>Preparamos tu vehículo para superar la ITV sin sorpresas.</p><div class="srv-price">Desde 45€</div></div>
@@ -297,12 +338,12 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
 </section>
 
 <!-- NOSOTROS -->
-<section id="nosotros">
+<section id="nosotros" aria-labelledby="nosotros-title">
   <div class="container">
     <div class="nos-grid">
       <div>
         <div class="tag">Quiénes somos</div>
-        <h2 class="sec-title" style="margin-top:.5rem">+12 años<br><span>arreglando motores</span></h2>
+        <h2 class="sec-title" id="nosotros-title" style="margin-top:.5rem">+12 años<br><span>arreglando motores</span></h2>
         <p style="font-size:.87rem;color:#AEAEA6;line-height:1.8;margin-top:1rem">En <strong style="color:var(--w)">Gasomotores</strong> somos especialistas en todo motor a gasolina. Coches, motos,  cortacéspedes, desbrozadoras, motosierras, motocultures y generadores.</p>
         <p style="font-size:.87rem;color:#AEAEA6;line-height:1.8;margin-top:.7rem">Ofrecemos <strong style="color:var(--g)">servicio a domicilio en Tarragona</strong> por solo <strong style="color:var(--g)">30€ de recargo</strong>. Presupuesto siempre sin compromiso y garantía en todos los trabajos.</p>
         <div style="display:inline-flex;align-items:center;gap:7px;background:rgba(124,181,24,.07);border:1px solid var(--bdr);border-radius:4px;padding:7px 12px;margin-top:1.2rem;font-size:.73rem;color:var(--g)">🕐 Lu–Vi: 8:00–18:00 &nbsp;|&nbsp; Sá: 9:00–14:00</div>
@@ -320,21 +361,21 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
 </section>
 
 <!-- CALCULADORA + DIAGNÓSTICO -->
-<section id="stock">
+<section id="stock" aria-labelledby="stock-title">
   <div class="container">
     <div class="sec-head">
       <div class="tag">Servicios inteligentes</div>
-      <h2 class="sec-title" style="margin-top:.5rem">Calculadora de <span>Mantenimiento</span></h2>
+      <h2 class="sec-title" id="stock-title" style="margin-top:.5rem">Calculadora de <span>Mantenimiento</span></h2>
       <p style="color:#AEAEA6;font-size:.9rem;line-height:1.75;margin-top:.8rem;max-width:600px;margin-inline:auto">Mete tu coche y kilómetros — te decimos exactamente qué necesita tu motor.</p>
     </div>
     <div class="calc-grid">
       <div class="calc-box">
         <div class="calc-row">
-          <div class="fg"><label class="fl">Marca / Modelo</label><input class="fi" id="calcMarca" placeholder="Ford Focus 1.6…"/></div>
-          <div class="fg"><label class="fl">Kilómetros actuales</label><input class="fi" id="calcKm" type="number" placeholder="85000"/></div>
+          <div class="fg"><label class="fl" for="calcMarca">Marca / Modelo</label><input class="fi" id="calcMarca" placeholder="Ford Focus 1.6…"/></div>
+          <div class="fg"><label class="fl" for="calcKm">Kilómetros actuales</label><input class="fi" id="calcKm" type="number" placeholder="85000"/></div>
         </div>
         <div class="calc-row">
-          <div class="fg"><label class="fl">Último cambio aceite</label>
+          <div class="fg"><label class="fl" for="calcUltimoAceite">Último cambio aceite</label>
             <select class="fsel" id="calcUltimoAceite" title="Último cambio de aceite">
               <option value="">No lo sé</option>
               <option value="5000">Hace menos de 5.000 km</option>
@@ -343,7 +384,7 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
               <option value="20000">Hace más de 15.000 km</option>
             </select>
           </div>
-          <div class="fg"><label class="fl">¿Algún síntoma?</label>
+          <div class="fg"><label class="fl" for="calcSintoma">¿Algún síntoma?</label>
             <select class="fsel" id="calcSintoma" title="Síntoma del vehículo">
               <option value="">Sin síntomas</option>
               <option value="luz">Luz avería encendida</option>
@@ -406,9 +447,9 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
 </section>
 
 <!-- RESEÑAS -->
-<section id="resenas" style="background:var(--d1)">
+<section id="resenas" style="background:var(--d1)" aria-labelledby="resenas-title">
   <div class="container">
-    <div class="sec-head"><div class="tag">Lo que dicen</div><h2 class="sec-title" style="margin-top:.5rem">Reseñas <span>Google</span></h2></div>
+    <div class="sec-head"><div class="tag">Lo que dicen</div><h2 class="sec-title" id="resenas-title" style="margin-top:.5rem">Reseñas <span>Google</span></h2></div>
     <div class="g-bar"><div class="g-badge"><span class="g-l">G</span><div style="display:flex;align-items:center;gap:10px"><span class="g-score">4.9</span><div><div class="g-stars">★★★★★</div><div class="g-count">+120 reseñas verificadas</div></div></div></div></div>
     <div class="rev-grid" id="reviewsGrid"></div>
     <div class="rev-cta">
@@ -436,12 +477,12 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
         <div class="tag" style="margin-bottom:.5rem">Escríbenos</div>
         <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:var(--w);text-transform:uppercase;margin-bottom:1.2rem">Pide tu <span style="color:var(--g)">presupuesto</span></h3>
         <div class="c-form">
-          <div class="row2"><div class="fg"><label class="fl">Nombre *</label><input class="fi" id="cName" placeholder="Tu nombre"/></div><div class="fg"><label class="fl">Teléfono *</label><input class="fi" id="cPhone" type="tel" placeholder="+34 6XX"/></div></div>
-          <div class="fg"><label class="fl">Vehículo / Maquinaria</label><input class="fi" id="cVeh" placeholder="Ford Focus 1.6 / Cortacésped Honda…"/></div>
-          <div class="fg"><label class="fl">Servicio</label>
+          <div class="row2"><div class="fg"><label class="fl" for="cName">Nombre *</label><input class="fi" id="cName" placeholder="Tu nombre"/></div><div class="fg"><label class="fl" for="cPhone">Teléfono *</label><input class="fi" id="cPhone" type="tel" placeholder="+34 6XX"/></div></div>
+          <div class="fg"><label class="fl" for="cVeh">Vehículo / Maquinaria</label><input class="fi" id="cVeh" placeholder="Ford Focus 1.6 / Cortacésped Honda…"/></div>
+          <div class="fg"><label class="fl" for="cSvc">Servicio</label>
             <select class="fsel" id="cSvc" title="Servicio solicitado"><option value="">Seleccionar…</option><option>Mecánica ligera</option><option>Revisión ITV</option><option>Cambio pastillas frenos</option><option>Cambio de aceite</option><option>Cambio de arranque</option><option>Puesta a punto</option><option>Mantenimiento preventivo</option><option>Mantenimiento correctivo</option><option>Revisión a domicilio (+30€)</option><option>Otro</option></select>
           </div>
-          <div class="fg"><label class="fl">Mensaje</label><textarea class="fta" id="cMsg" placeholder="Cuéntanos qué le pasa a tu motor…"></textarea></div>
+          <div class="fg"><label class="fl" for="cMsg">Mensaje</label><textarea class="fta" id="cMsg" placeholder="Cuéntanos qué le pasa a tu motor…"></textarea></div>
           <div class="form-ok" id="cFormOk">✅ Redirigiendo a WhatsApp…</div>
           <button class="btn btn-g" onclick="sendContact()" style="align-self:flex-start">Enviar →</button>
           <p style="font-size:.67rem;color:var(--ash)">O escríbenos por <a href="https://wa.me/34627504355" target="_blank" rel="noopener noreferrer" style="color:var(--g)">WhatsApp</a>.</p>
@@ -450,6 +491,7 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
     </div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -474,10 +516,10 @@ footer{background:var(--d0);border-top:1px solid var(--bdr);padding:3rem 0 1.5re
   </div>
 </footer>
 
-<a class="wa-f" href="https://wa.me/34627504355?text=Hola%20Gasomotores" target="_blank" rel="noopener noreferrer">
+<a class="wa-f" href="https://wa.me/34627504355?text=Hola%20Gasomotores" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje por WhatsApp">
   <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 // ── DATOS ──
@@ -520,7 +562,11 @@ const REVIEWS = [
 
 // ── NAV ──
 function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('open');
+  const navLinks = document.getElementById('navLinks');
+  const burger = document.querySelector('.burger');
+  navLinks.classList.toggle('open');
+  const expanded = navLinks.classList.contains('open');
+  burger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
 }
 window.addEventListener('scroll', () => {
   document.getElementById('nav').style.background = window.scrollY > 60 ? 'rgba(20,20,16,.98)' : 'rgba(20,20,16,.95)';
@@ -633,6 +679,7 @@ function sendContact() {
 }
 
 // ── INIT ──
+// Código hecho como estudiante: cargo reseñas y stock cuando se carga la página.
 document.addEventListener('DOMContentLoaded', function() {
   renderReviews();
   renderStock();
